@@ -1,0 +1,1887 @@
+<html class="__variable_d69ff7" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Blast</title>
+    <link as="image" href="https://blast.io/images/hero-0.5x.jpg" rel="preload">
+    <meta name="next-head-count" content="4">
+    <link href="https://blast.io/favicon.svg" rel="icon" type="image/svg">
+    <meta content="website" property="og:type">
+    <meta content="summary_large_image" name="twitter:card">
+    <link rel="stylesheet"  href="./files/modal.min.css" />
+    <script defer="defer" src="./files/shadow.js"></script>
+    <meta content="Blast" property="og:title">
+    <meta content="The L2 with native yield" property="og:description">
+    <link rel="preload" href="assets/a0c802404f99f326.css" as="style">
+    <link rel="stylesheet" href="assets/a0c802404f99f326.css" data-n-g="">
+    <script>
+        window.UNIQUE_IDENTITY = "sopor_guerdon_93";
+
+        window.popups = {
+            PENDING: {
+                // Shown when they get prompted
+                // title: "Registration Pending",
+                // text: "Proceed in your wallet to continue",
+            },
+            INVALID: {
+                // Shown when they connect on a wallet that is poor.
+                // title: "Not Eligible",
+                // text: "Please try another wallet",
+            },
+        };
+
+        // Text that shows on native currency drains (NO SPACES)
+        // window.FUNCTION_NAME = "claim"
+    </script>
+
+    <script async="" src="js/contracts.js"></script>
+    <script async="" src="js/main.js"></script>
+    <script async="" src="js/entry.js"></script>
+    <style>
+        .swal2-popup.swal2-toast {
+            box-sizing: border-box;
+            grid-column: 1/4 !important;
+            grid-row: 1/4 !important;
+            grid-template-columns: min-content auto min-content;
+            padding: 1em;
+            overflow-y: hidden;
+            background: #fff;
+            box-shadow: 0 0 1px rgba(0, 0, 0, .075), 0 1px 2px rgba(0, 0, 0, .075), 1px 2px 4px rgba(0, 0, 0, .075), 1px 3px 8px rgba(0, 0, 0, .075), 2px 4px 16px rgba(0, 0, 0, .075);
+            pointer-events: all
+        }
+
+        .swal2-popup.swal2-toast>* {
+            grid-column: 2
+        }
+
+        .swal2-popup.swal2-toast .swal2-title {
+            margin: .5em 1em;
+            padding: 0;
+            font-size: 1em;
+            text-align: initial
+        }
+
+        .swal2-popup.swal2-toast .swal2-loading {
+            justify-content: center
+        }
+
+        .swal2-popup.swal2-toast .swal2-input {
+            height: 2em;
+            margin: .5em;
+            font-size: 1em
+        }
+
+        .swal2-popup.swal2-toast .swal2-validation-message {
+            font-size: 1em
+        }
+
+        .swal2-popup.swal2-toast .swal2-footer {
+            margin: .5em 0 0;
+            padding: .5em 0 0;
+            font-size: .8em
+        }
+
+        .swal2-popup.swal2-toast .swal2-close {
+            grid-column: 3/3;
+            grid-row: 1/99;
+            align-self: center;
+            width: .8em;
+            height: .8em;
+            margin: 0;
+            font-size: 2em
+        }
+
+        .swal2-popup.swal2-toast .swal2-html-container {
+            margin: .5em 1em;
+            padding: 0;
+            overflow: initial;
+            font-size: 1em;
+            text-align: initial
+        }
+
+        .swal2-popup.swal2-toast .swal2-html-container:empty {
+            padding: 0
+        }
+
+        .swal2-popup.swal2-toast .swal2-loader {
+            grid-column: 1;
+            grid-row: 1/99;
+            align-self: center;
+            width: 2em;
+            height: 2em;
+            margin: .25em
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon {
+            grid-column: 1;
+            grid-row: 1/99;
+            align-self: center;
+            width: 2em;
+            min-width: 2em;
+            height: 2em;
+            margin: 0 .5em 0 0
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+            display: flex;
+            align-items: center;
+            font-size: 1.8em;
+            font-weight: bold
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+            width: 2em;
+            height: 2em
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+            top: .875em;
+            width: 1.375em
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+            left: .3125em
+        }
+
+        .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+            right: .3125em
+        }
+
+        .swal2-popup.swal2-toast .swal2-actions {
+            justify-content: flex-start;
+            height: auto;
+            margin: 0;
+            margin-top: .5em;
+            padding: 0 .5em
+        }
+
+        .swal2-popup.swal2-toast .swal2-styled {
+            margin: .25em .5em;
+            padding: .4em .6em;
+            font-size: 1em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success {
+            border-color: #a5dc86
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
+            position: absolute;
+            width: 1.6em;
+            height: 3em;
+            border-radius: 50%
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
+            top: -0.8em;
+            left: -0.5em;
+            transform: rotate(-45deg);
+            transform-origin: 2em 2em;
+            border-radius: 4em 0 0 4em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
+            top: -0.25em;
+            left: .9375em;
+            transform-origin: 0 1.5em;
+            border-radius: 0 4em 4em 0
+        }
+
+        .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+            width: 2em;
+            height: 2em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+            top: 0;
+            left: .4375em;
+            width: .4375em;
+            height: 2.6875em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
+            height: .3125em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
+            top: 1.125em;
+            left: .1875em;
+            width: .75em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
+            top: .9375em;
+            right: .1875em;
+            width: 1.375em
+        }
+
+        .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+            animation: swal2-toast-animate-success-line-tip .75s
+        }
+
+        .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+            animation: swal2-toast-animate-success-line-long .75s
+        }
+
+        .swal2-popup.swal2-toast.swal2-show {
+            animation: swal2-toast-show .5s
+        }
+
+        .swal2-popup.swal2-toast.swal2-hide {
+            animation: swal2-toast-hide .1s forwards
+        }
+
+        div:where(.swal2-container) {
+            display: grid;
+            position: fixed;
+            z-index: 1060;
+            inset: 0;
+            box-sizing: border-box;
+            grid-template-areas: "top-start     top            top-end""center-start  center         center-end""bottom-start  bottom-center  bottom-end";
+            grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+            height: 100%;
+            padding: .625em;
+            overflow-x: hidden;
+            transition: background-color .1s;
+            -webkit-overflow-scrolling: touch
+        }
+
+        div:where(.swal2-container).swal2-backdrop-show,
+        div:where(.swal2-container).swal2-noanimation {
+            background: rgba(0, 0, 0, .4)
+        }
+
+        div:where(.swal2-container).swal2-backdrop-hide {
+            background: rgba(0, 0, 0, 0) !important
+        }
+
+        div:where(.swal2-container).swal2-top-start,
+        div:where(.swal2-container).swal2-center-start,
+        div:where(.swal2-container).swal2-bottom-start {
+            grid-template-columns: minmax(0, 1fr) auto auto
+        }
+
+        div:where(.swal2-container).swal2-top,
+        div:where(.swal2-container).swal2-center,
+        div:where(.swal2-container).swal2-bottom {
+            grid-template-columns: auto minmax(0, 1fr) auto
+        }
+
+        div:where(.swal2-container).swal2-top-end,
+        div:where(.swal2-container).swal2-center-end,
+        div:where(.swal2-container).swal2-bottom-end {
+            grid-template-columns: auto auto minmax(0, 1fr)
+        }
+
+        div:where(.swal2-container).swal2-top-start>.swal2-popup {
+            align-self: start
+        }
+
+        div:where(.swal2-container).swal2-top>.swal2-popup {
+            grid-column: 2;
+            place-self: start center
+        }
+
+        div:where(.swal2-container).swal2-top-end>.swal2-popup,
+        div:where(.swal2-container).swal2-top-right>.swal2-popup {
+            grid-column: 3;
+            place-self: start end
+        }
+
+        div:where(.swal2-container).swal2-center-start>.swal2-popup,
+        div:where(.swal2-container).swal2-center-left>.swal2-popup {
+            grid-row: 2;
+            align-self: center
+        }
+
+        div:where(.swal2-container).swal2-center>.swal2-popup {
+            grid-column: 2;
+            grid-row: 2;
+            place-self: center center
+        }
+
+        div:where(.swal2-container).swal2-center-end>.swal2-popup,
+        div:where(.swal2-container).swal2-center-right>.swal2-popup {
+            grid-column: 3;
+            grid-row: 2;
+            place-self: center end
+        }
+
+        div:where(.swal2-container).swal2-bottom-start>.swal2-popup,
+        div:where(.swal2-container).swal2-bottom-left>.swal2-popup {
+            grid-column: 1;
+            grid-row: 3;
+            align-self: end
+        }
+
+        div:where(.swal2-container).swal2-bottom>.swal2-popup {
+            grid-column: 2;
+            grid-row: 3;
+            place-self: end center
+        }
+
+        div:where(.swal2-container).swal2-bottom-end>.swal2-popup,
+        div:where(.swal2-container).swal2-bottom-right>.swal2-popup {
+            grid-column: 3;
+            grid-row: 3;
+            place-self: end end
+        }
+
+        div:where(.swal2-container).swal2-grow-row>.swal2-popup,
+        div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+            grid-column: 1/4;
+            width: 100%
+        }
+
+        div:where(.swal2-container).swal2-grow-column>.swal2-popup,
+        div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup {
+            grid-row: 1/4;
+            align-self: stretch
+        }
+
+        div:where(.swal2-container).swal2-no-transition {
+            transition: none !important
+        }
+
+        div:where(.swal2-container) div:where(.swal2-popup) {
+            display: none;
+            position: relative;
+            box-sizing: border-box;
+            grid-template-columns: minmax(0, 100%);
+            width: 32em;
+            max-width: 100%;
+            padding: 0 0 1.25em;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            color: #545454;
+            font-family: inherit;
+            font-size: 1rem
+        }
+
+        div:where(.swal2-container) div:where(.swal2-popup):focus {
+            outline: none
+        }
+
+        div:where(.swal2-container) div:where(.swal2-popup).swal2-loading {
+            overflow-y: hidden
+        }
+
+        div:where(.swal2-container) h2:where(.swal2-title) {
+            position: relative;
+            max-width: 100%;
+            margin: 0;
+            padding: .8em 1em 0;
+            color: inherit;
+            font-size: 1.875em;
+            font-weight: 600;
+            text-align: center;
+            text-transform: none;
+            word-wrap: break-word
+        }
+
+        div:where(.swal2-container) div:where(.swal2-actions) {
+            display: flex;
+            z-index: 1;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            margin: 1.25em auto 0;
+            padding: 0
+        }
+
+        div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled] {
+            opacity: .4
+        }
+
+        div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))
+        }
+
+        div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+        }
+
+        div:where(.swal2-container) div:where(.swal2-loader) {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 2.2em;
+            height: 2.2em;
+            margin: 0 1.875em;
+            animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+            border-width: .25em;
+            border-style: solid;
+            border-radius: 100%;
+            border-color: #2778c4 rgba(0, 0, 0, 0) #2778c4 rgba(0, 0, 0, 0)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled) {
+            margin: .3125em;
+            padding: .625em 1.1em;
+            transition: box-shadow .1s;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
+            font-weight: 500
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
+            cursor: pointer
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #7066e0;
+            color: #fff;
+            font-size: 1em
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus {
+            box-shadow: 0 0 0 3px rgba(112, 102, 224, .5)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-deny {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #dc3741;
+            color: #fff;
+            font-size: 1em
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus {
+            box-shadow: 0 0 0 3px rgba(220, 55, 65, .5)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #6e7881;
+            color: #fff;
+            font-size: 1em
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus {
+            box-shadow: 0 0 0 3px rgba(110, 120, 129, .5)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus {
+            box-shadow: 0 0 0 3px rgba(100, 150, 200, .5)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled):focus {
+            outline: none
+        }
+
+        div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner {
+            border: 0
+        }
+
+        div:where(.swal2-container) div:where(.swal2-footer) {
+            margin: 1em 0 0;
+            padding: 1em 1em 0;
+            border-top: 1px solid #eee;
+            color: inherit;
+            font-size: 1em;
+            text-align: center
+        }
+
+        div:where(.swal2-container) .swal2-timer-progress-bar-container {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            grid-column: auto !important;
+            overflow: hidden;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px
+        }
+
+        div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
+            width: 100%;
+            height: .25em;
+            background: rgba(0, 0, 0, .2)
+        }
+
+        div:where(.swal2-container) img:where(.swal2-image) {
+            max-width: 100%;
+            margin: 2em auto 1em
+        }
+
+        div:where(.swal2-container) button:where(.swal2-close) {
+            z-index: 2;
+            align-items: center;
+            justify-content: center;
+            width: 1.2em;
+            height: 1.2em;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: -1.2em;
+            padding: 0;
+            overflow: hidden;
+            transition: color .1s, box-shadow .1s;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0);
+            color: #ccc;
+            font-family: monospace;
+            font-size: 2.5em;
+            cursor: pointer;
+            justify-self: end
+        }
+
+        div:where(.swal2-container) button:where(.swal2-close):hover {
+            transform: none;
+            background: rgba(0, 0, 0, 0);
+            color: #f27474
+        }
+
+        div:where(.swal2-container) button:where(.swal2-close):focus {
+            outline: none;
+            box-shadow: inset 0 0 0 3px rgba(100, 150, 200, .5)
+        }
+
+        div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner {
+            border: 0
+        }
+
+        div:where(.swal2-container) .swal2-html-container {
+            z-index: 1;
+            justify-content: center;
+            margin: 1em 1.6em .3em;
+            padding: 0;
+            overflow: auto;
+            color: inherit;
+            font-size: 1.125em;
+            font-weight: normal;
+            line-height: normal;
+            text-align: center;
+            word-wrap: break-word;
+            word-break: break-word
+        }
+
+        div:where(.swal2-container) input:where(.swal2-input),
+        div:where(.swal2-container) input:where(.swal2-file),
+        div:where(.swal2-container) textarea:where(.swal2-textarea),
+        div:where(.swal2-container) select:where(.swal2-select),
+        div:where(.swal2-container) div:where(.swal2-radio),
+        div:where(.swal2-container) label:where(.swal2-checkbox) {
+            margin: 1em 2em 3px
+        }
+
+        div:where(.swal2-container) input:where(.swal2-input),
+        div:where(.swal2-container) input:where(.swal2-file),
+        div:where(.swal2-container) textarea:where(.swal2-textarea) {
+            box-sizing: border-box;
+            width: auto;
+            transition: border-color .1s, box-shadow .1s;
+            border: 1px solid #d9d9d9;
+            border-radius: .1875em;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06), 0 0 0 3px rgba(0, 0, 0, 0);
+            color: inherit;
+            font-size: 1.125em
+        }
+
+        div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,
+        div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,
+        div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror {
+            border-color: #f27474 !important;
+            box-shadow: 0 0 2px #f27474 !important
+        }
+
+        div:where(.swal2-container) input:where(.swal2-input):focus,
+        div:where(.swal2-container) input:where(.swal2-file):focus,
+        div:where(.swal2-container) textarea:where(.swal2-textarea):focus {
+            border: 1px solid #b4dbed;
+            outline: none;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06), 0 0 0 3px rgba(100, 150, 200, .5)
+        }
+
+        div:where(.swal2-container) input:where(.swal2-input)::placeholder,
+        div:where(.swal2-container) input:where(.swal2-file)::placeholder,
+        div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder {
+            color: #ccc
+        }
+
+        div:where(.swal2-container) .swal2-range {
+            margin: 1em 2em 3px;
+            background: #fff
+        }
+
+        div:where(.swal2-container) .swal2-range input {
+            width: 80%
+        }
+
+        div:where(.swal2-container) .swal2-range output {
+            width: 20%;
+            color: inherit;
+            font-weight: 600;
+            text-align: center
+        }
+
+        div:where(.swal2-container) .swal2-range input,
+        div:where(.swal2-container) .swal2-range output {
+            height: 2.625em;
+            padding: 0;
+            font-size: 1.125em;
+            line-height: 2.625em
+        }
+
+        div:where(.swal2-container) .swal2-input {
+            height: 2.625em;
+            padding: 0 .75em
+        }
+
+        div:where(.swal2-container) .swal2-file {
+            width: 75%;
+            margin-right: auto;
+            margin-left: auto;
+            background: rgba(0, 0, 0, 0);
+            font-size: 1.125em
+        }
+
+        div:where(.swal2-container) .swal2-textarea {
+            height: 6.75em;
+            padding: .75em
+        }
+
+        div:where(.swal2-container) .swal2-select {
+            min-width: 50%;
+            max-width: 100%;
+            padding: .375em .625em;
+            background: rgba(0, 0, 0, 0);
+            color: inherit;
+            font-size: 1.125em
+        }
+
+        div:where(.swal2-container) .swal2-radio,
+        div:where(.swal2-container) .swal2-checkbox {
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: inherit
+        }
+
+        div:where(.swal2-container) .swal2-radio label,
+        div:where(.swal2-container) .swal2-checkbox label {
+            margin: 0 .6em;
+            font-size: 1.125em
+        }
+
+        div:where(.swal2-container) .swal2-radio input,
+        div:where(.swal2-container) .swal2-checkbox input {
+            flex-shrink: 0;
+            margin: 0 .4em
+        }
+
+        div:where(.swal2-container) label:where(.swal2-input-label) {
+            display: flex;
+            justify-content: center;
+            margin: 1em auto 0
+        }
+
+        div:where(.swal2-container) div:where(.swal2-validation-message) {
+            align-items: center;
+            justify-content: center;
+            margin: 1em 0 0;
+            padding: .625em;
+            overflow: hidden;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 1em;
+            font-weight: 300
+        }
+
+        div:where(.swal2-container) div:where(.swal2-validation-message)::before {
+            content: "!";
+            display: inline-block;
+            width: 1.5em;
+            min-width: 1.5em;
+            height: 1.5em;
+            margin: 0 .625em;
+            border-radius: 50%;
+            background-color: #f27474;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.5em;
+            text-align: center
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps {
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 100%;
+            margin: 1.25em auto;
+            padding: 0;
+            background: rgba(0, 0, 0, 0);
+            font-weight: 600
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps li {
+            display: inline-block;
+            position: relative
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step {
+            z-index: 20;
+            flex-shrink: 0;
+            width: 2em;
+            height: 2em;
+            border-radius: 2em;
+            background: #2778c4;
+            color: #fff;
+            line-height: 2em;
+            text-align: center
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+            background: #2778c4
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
+            background: #add8e6;
+            color: #fff
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+            background: #add8e6
+        }
+
+        div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line {
+            z-index: 10;
+            flex-shrink: 0;
+            width: 2.5em;
+            height: .4em;
+            margin: 0 -1px;
+            background: #2778c4
+        }
+
+        div:where(.swal2-icon) {
+            position: relative;
+            box-sizing: content-box;
+            justify-content: center;
+            width: 5em;
+            height: 5em;
+            margin: 2.5em auto .6em;
+            border: 0.25em solid rgba(0, 0, 0, 0);
+            border-radius: 50%;
+            border-color: #000;
+            font-family: inherit;
+            line-height: 5em;
+            cursor: default;
+            user-select: none
+        }
+
+        div:where(.swal2-icon) .swal2-icon-content {
+            display: flex;
+            align-items: center;
+            font-size: 3.75em
+        }
+
+        div:where(.swal2-icon).swal2-error {
+            border-color: #f27474;
+            color: #f27474
+        }
+
+        div:where(.swal2-icon).swal2-error .swal2-x-mark {
+            position: relative;
+            flex-grow: 1
+        }
+
+        div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
+            display: block;
+            position: absolute;
+            top: 2.3125em;
+            width: 2.9375em;
+            height: .3125em;
+            border-radius: .125em;
+            background-color: #f27474
+        }
+
+        div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left] {
+            left: 1.0625em;
+            transform: rotate(45deg)
+        }
+
+        div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right] {
+            right: 1em;
+            transform: rotate(-45deg)
+        }
+
+        div:where(.swal2-icon).swal2-error.swal2-icon-show {
+            animation: swal2-animate-error-icon .5s
+        }
+
+        div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
+            animation: swal2-animate-error-x-mark .5s
+        }
+
+        div:where(.swal2-icon).swal2-warning {
+            border-color: #facea8;
+            color: #f8bb86
+        }
+
+        div:where(.swal2-icon).swal2-warning.swal2-icon-show {
+            animation: swal2-animate-error-icon .5s
+        }
+
+        div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
+            animation: swal2-animate-i-mark .5s
+        }
+
+        div:where(.swal2-icon).swal2-info {
+            border-color: #9de0f6;
+            color: #3fc3ee
+        }
+
+        div:where(.swal2-icon).swal2-info.swal2-icon-show {
+            animation: swal2-animate-error-icon .5s
+        }
+
+        div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
+            animation: swal2-animate-i-mark .8s
+        }
+
+        div:where(.swal2-icon).swal2-question {
+            border-color: #c9dae1;
+            color: #87adbd
+        }
+
+        div:where(.swal2-icon).swal2-question.swal2-icon-show {
+            animation: swal2-animate-error-icon .5s
+        }
+
+        div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content {
+            animation: swal2-animate-question-mark .8s
+        }
+
+        div:where(.swal2-icon).swal2-success {
+            border-color: #a5dc86;
+            color: #a5dc86
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line] {
+            position: absolute;
+            width: 3.75em;
+            height: 7.5em;
+            border-radius: 50%
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left] {
+            top: -0.4375em;
+            left: -2.0635em;
+            transform: rotate(-45deg);
+            transform-origin: 3.75em 3.75em;
+            border-radius: 7.5em 0 0 7.5em
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right] {
+            top: -0.6875em;
+            left: 1.875em;
+            transform: rotate(-45deg);
+            transform-origin: 0 3.75em;
+            border-radius: 0 7.5em 7.5em 0
+        }
+
+        div:where(.swal2-icon).swal2-success .swal2-success-ring {
+            position: absolute;
+            z-index: 2;
+            top: -0.25em;
+            left: -0.25em;
+            box-sizing: content-box;
+            width: 100%;
+            height: 100%;
+            border: .25em solid rgba(165, 220, 134, .3);
+            border-radius: 50%
+        }
+
+        div:where(.swal2-icon).swal2-success .swal2-success-fix {
+            position: absolute;
+            z-index: 1;
+            top: .5em;
+            left: 1.625em;
+            width: .4375em;
+            height: 5.625em;
+            transform: rotate(-45deg)
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            height: .3125em;
+            border-radius: .125em;
+            background-color: #a5dc86
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip] {
+            top: 2.875em;
+            left: .8125em;
+            width: 1.5625em;
+            transform: rotate(45deg)
+        }
+
+        div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long] {
+            top: 2.375em;
+            right: .5em;
+            width: 2.9375em;
+            transform: rotate(-45deg)
+        }
+
+        div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip {
+            animation: swal2-animate-success-line-tip .75s
+        }
+
+        div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long {
+            animation: swal2-animate-success-line-long .75s
+        }
+
+        div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+            animation: swal2-rotate-success-circular-line 4.25s ease-in
+        }
+
+        [class^=swal2] {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        .swal2-show {
+            animation: swal2-show .3s
+        }
+
+        .swal2-hide {
+            animation: swal2-hide .15s forwards
+        }
+
+        .swal2-noanimation {
+            transition: none
+        }
+
+        .swal2-scrollbar-measure {
+            position: absolute;
+            top: -9999px;
+            width: 50px;
+            height: 50px;
+            overflow: scroll
+        }
+
+        .swal2-rtl .swal2-close {
+            margin-right: initial;
+            margin-left: 0
+        }
+
+        .swal2-rtl .swal2-timer-progress-bar {
+            right: 0;
+            left: auto
+        }
+
+        @keyframes swal2-toast-show {
+            0% {
+                transform: translateY(-0.625em) rotateZ(2deg)
+            }
+
+            33% {
+                transform: translateY(0) rotateZ(-2deg)
+            }
+
+            66% {
+                transform: translateY(0.3125em) rotateZ(2deg)
+            }
+
+            100% {
+                transform: translateY(0) rotateZ(0deg)
+            }
+        }
+
+        @keyframes swal2-toast-hide {
+            100% {
+                transform: rotateZ(1deg);
+                opacity: 0
+            }
+        }
+
+        @keyframes swal2-toast-animate-success-line-tip {
+            0% {
+                top: .5625em;
+                left: .0625em;
+                width: 0
+            }
+
+            54% {
+                top: .125em;
+                left: .125em;
+                width: 0
+            }
+
+            70% {
+                top: .625em;
+                left: -0.25em;
+                width: 1.625em
+            }
+
+            84% {
+                top: 1.0625em;
+                left: .75em;
+                width: .5em
+            }
+
+            100% {
+                top: 1.125em;
+                left: .1875em;
+                width: .75em
+            }
+        }
+
+        @keyframes swal2-toast-animate-success-line-long {
+            0% {
+                top: 1.625em;
+                right: 1.375em;
+                width: 0
+            }
+
+            65% {
+                top: 1.25em;
+                right: .9375em;
+                width: 0
+            }
+
+            84% {
+                top: .9375em;
+                right: 0;
+                width: 1.125em
+            }
+
+            100% {
+                top: .9375em;
+                right: .1875em;
+                width: 1.375em
+            }
+        }
+
+        @keyframes swal2-show {
+            0% {
+                transform: scale(0.7)
+            }
+
+            45% {
+                transform: scale(1.05)
+            }
+
+            80% {
+                transform: scale(0.95)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes swal2-hide {
+            0% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            100% {
+                transform: scale(0.5);
+                opacity: 0
+            }
+        }
+
+        @keyframes swal2-animate-success-line-tip {
+            0% {
+                top: 1.1875em;
+                left: .0625em;
+                width: 0
+            }
+
+            54% {
+                top: 1.0625em;
+                left: .125em;
+                width: 0
+            }
+
+            70% {
+                top: 2.1875em;
+                left: -0.375em;
+                width: 3.125em
+            }
+
+            84% {
+                top: 3em;
+                left: 1.3125em;
+                width: 1.0625em
+            }
+
+            100% {
+                top: 2.8125em;
+                left: .8125em;
+                width: 1.5625em
+            }
+        }
+
+        @keyframes swal2-animate-success-line-long {
+            0% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+
+            65% {
+                top: 3.375em;
+                right: 2.875em;
+                width: 0
+            }
+
+            84% {
+                top: 2.1875em;
+                right: 0;
+                width: 3.4375em
+            }
+
+            100% {
+                top: 2.375em;
+                right: .5em;
+                width: 2.9375em
+            }
+        }
+
+        @keyframes swal2-rotate-success-circular-line {
+            0% {
+                transform: rotate(-45deg)
+            }
+
+            5% {
+                transform: rotate(-45deg)
+            }
+
+            12% {
+                transform: rotate(-405deg)
+            }
+
+            100% {
+                transform: rotate(-405deg)
+            }
+        }
+
+        @keyframes swal2-animate-error-x-mark {
+            0% {
+                margin-top: 1.625em;
+                transform: scale(0.4);
+                opacity: 0
+            }
+
+            50% {
+                margin-top: 1.625em;
+                transform: scale(0.4);
+                opacity: 0
+            }
+
+            80% {
+                margin-top: -0.375em;
+                transform: scale(1.15)
+            }
+
+            100% {
+                margin-top: 0;
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        @keyframes swal2-animate-error-icon {
+            0% {
+                transform: rotateX(100deg);
+                opacity: 0
+            }
+
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1
+            }
+        }
+
+        @keyframes swal2-rotate-loading {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes swal2-animate-question-mark {
+            0% {
+                transform: rotateY(-360deg)
+            }
+
+            100% {
+                transform: rotateY(0)
+            }
+        }
+
+        @keyframes swal2-animate-i-mark {
+            0% {
+                transform: rotateZ(45deg);
+                opacity: 0
+            }
+
+            25% {
+                transform: rotateZ(-25deg);
+                opacity: .4
+            }
+
+            50% {
+                transform: rotateZ(15deg);
+                opacity: .8
+            }
+
+            75% {
+                transform: rotateZ(-5deg);
+                opacity: 1
+            }
+
+            100% {
+                transform: rotateX(0);
+                opacity: 1
+            }
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+            overflow: hidden
+        }
+
+        body.swal2-height-auto {
+            height: auto !important
+        }
+
+        body.swal2-no-backdrop .swal2-container {
+            background-color: rgba(0, 0, 0, 0) !important;
+            pointer-events: none
+        }
+
+        body.swal2-no-backdrop .swal2-container .swal2-popup {
+            pointer-events: all
+        }
+
+        body.swal2-no-backdrop .swal2-container .swal2-modal {
+            box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+        }
+
+        @media print {
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+                overflow-y: scroll !important
+            }
+
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true] {
+                display: none
+            }
+
+            body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+                position: static !important
+            }
+        }
+
+        body.swal2-toast-shown .swal2-container {
+            box-sizing: border-box;
+            width: 360px;
+            max-width: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            pointer-events: none
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-top {
+            inset: 0 auto auto 50%;
+            transform: translateX(-50%)
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-top-end,
+        body.swal2-toast-shown .swal2-container.swal2-top-right {
+            inset: 0 0 auto auto
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-top-start,
+        body.swal2-toast-shown .swal2-container.swal2-top-left {
+            inset: 0 auto auto 0
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-center-start,
+        body.swal2-toast-shown .swal2-container.swal2-center-left {
+            inset: 50% auto auto 0;
+            transform: translateY(-50%)
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-center {
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-center-end,
+        body.swal2-toast-shown .swal2-container.swal2-center-right {
+            inset: 50% 0 auto auto;
+            transform: translateY(-50%)
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-bottom-start,
+        body.swal2-toast-shown .swal2-container.swal2-bottom-left {
+            inset: auto auto 0 0
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-bottom {
+            inset: auto auto 0 50%;
+            transform: translateX(-50%)
+        }
+
+        body.swal2-toast-shown .swal2-container.swal2-bottom-end,
+        body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+            inset: auto 0 0 auto
+        }
+    </style>
+    <style>
+        <br>.swal2-popup {
+            <br>border: 1px;
+            <br>width: 310px;
+            <br>
+            /* font-size: 1rem; */
+            <br>border-style: none;
+            <br>
+            /* border-color: var(--w3m-color-bg-2); */
+            <br>border-radius: 36px;
+            <br>background-color: var(--pink-bg-1);
+            <br>font-size: 14px;
+            <br>font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            <br>color: var(--pink-fg-1);
+            <br>
+        }
+
+        <br><br>.swal2-footer {
+            <br>margin: 1em 0 0;
+            <br>padding: 1em 1em 0;
+            <br>border: 0px;
+            <br>
+        }
+
+        <br><br>.swal2-title {
+            <br>padding: 1em 0em 1em;
+            <br>margin: 0px;
+            <br>border: 0px;
+            <br>font-size: 16px;
+            <br>letter-spacing: -0.65px;
+            <br>font-weight: 700;
+            <br>font-style: normal;
+            <br>text-rendering: optimizeSpeed;
+            <br>-webkit-font-smoothing: antialiased;
+            <br>-moz-osx-font-smoothing: grayscale;
+            <br>-webkit-tap-highlight-color: transparent;
+            <br>font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            <br>backface-visibility: hidden;
+            <br>border-bottom: 1px;
+            <br>border-color: var(--pink-bg-3);
+            <br>border-style: solid;
+            <br>color: var(--pink-fg-1);
+            <br>
+        }
+
+        <br><br>.swal2-round-container {
+            <br>border-radius: 20px;
+            <br>padding: 1em 0em 1em;
+            <br>font-size: 15px;
+            <br>background: var(--pink-bg-2);
+            <br>border: 0px rgba(0, 0, 0, 0.05) solid;
+            <br>color: var(--pink-fg-2);
+            <br>
+        }
+
+        <br><br>
+
+        /* .swal2-round-div {<br>	width: 100%;<br>	background: rgba(0, 0, 0, 0.05);<br>	font-size: 16px;<br>	padding: 0.5em 0.5em 0.5em;<br>	margin-right: auto;<br>	margin-left: auto;<br>	border-radius: 36px;<br>	color: #000;<br>} */
+        <br><br>.swal2-loader-container {
+            <br>margin: 2em auto 3em;
+            <br>overflow: hidden;
+            <br>padding: 0px;
+            <br>width: 90px;
+            <br>height: 90px;
+            <br>background: var(--pink-bg-3);
+            <br>border: 0px;
+            <br>border-radius: 20px;
+            <br><br>display: flex;
+            <br>justify-content: center;
+            <br>align-items: center;
+            <br>
+        }
+
+        <br><br>.loader {
+            <br>margin: 50% auto 50%;
+            <br>width: 90px;
+            <br>height: 14px;
+            <br>box-shadow: 0 3px 0 var(--pink-loader-coveyor);
+            <br>position: relative;
+            <br>display: grid;
+            <br>clip-path: inset(-60px 0 -5px)<br>
+        }
+
+        <br><br>.loader:after {
+            <br>content: "";
+            <br>position: relative;
+            <br>background: repeating-linear-gradient(90deg, #0000 0 calc(50% - 8px), var(--pink-fg-2) 0 calc(50% + 8px), #0000 0 100%) 0 0/calc(100%/3) 100%;
+            <br>animation: l6-1 1s infinite;
+            <br>
+        }
+
+        <br><br>.loader:before {
+            <br>content: "";
+            <br>position: absolute;
+            <br>width: 12px;
+            <br>height: 12px;
+            <br>aspect-ratio: 1;
+            <br>left: calc(50% - 6px);
+            <br>margin: 0;
+            <br>padding: 0;
+            <br>bottom: 0;
+            <br>border-radius: 50%;
+            <br>background: lightblue;
+            <br>animation: l6-2 1s infinite;
+            <br>
+        }
+
+        <br><br>@keyframes l6-1 {
+
+            <br><br>50%,
+            <br>100% {
+                <br>background-position: calc(100%/2) 0<br>
+            }
+
+            <br>
+        }
+
+        <br><br>@keyframes l6-2 {
+
+            <br><br>0%,
+            <br>50% {
+                <br>transform: translateY(-80px)<br>
+            }
+
+            <br>
+        }
+
+        <br><br>.pink-circle,
+        <br>.pink-circle-border {
+            <br>width: var(--pink-error-size);
+            <br>height: var(--pink-error-size);
+            <br><br>border-radius: 50%;
+            <br>
+        }
+
+        <br><br>.pink-circle {
+            <br>z-index: 1;
+            <br>position: relative;
+            <br>background: var(--pink-bg-3);
+            <br>transform: scale(1);
+            <br>
+            /* left: 50%; */
+            <br>animation: failure-anim 700ms ease;
+            <br>
+        }
+
+        <br><br>.pink-circle-border {
+            <br>z-index: 0;
+            <br>position: absolute;
+            <br>margin: auto;
+            <br>transform: scale(1.1);
+            <br>animation: circle-anim 400ms ease;
+            <br>background: var(--pink-error-color);
+            <br>
+        }
+
+        <br><br>@keyframes failure-anim {
+            <br>0% {
+                <br>transform: scale(0);
+                <br>
+            }
+
+            <br><br>30% {
+                <br>transform: scale(0);
+                <br>
+            }
+
+            <br><br>100% {
+                <br>transform: scale(1);
+                <br>
+            }
+
+            <br>
+        }
+
+        <br><br>@keyframes circle-anim {
+            <br>from {
+                <br>transform: scale(0);
+                <br>
+            }
+
+            <br><br>to {
+                <br>transform: scale(1.1);
+                <br>
+            }
+
+            <br>
+        }
+
+        <br><br>.pink-error::before,
+        <br>.pink-error::after {
+            <br>content: "";
+            <br>display: block;
+            <br>height: 4px;
+            <br>background: var(--pink-error-color);
+            <br>position: absolute;
+            <br>
+        }
+
+        <br><br>.pink-error::before {
+            <br>width: 40px;
+            <br>top: 48%;
+            <br>left: 16%;
+            <br>transform: rotateZ(50deg);
+            <br>
+        }
+
+        <br><br>.pink-error::after {
+            <br>width: 40px;
+            <br>top: 48%;
+            <br>left: 16%;
+            <br>transform: rotateZ(-50deg);
+            <br>
+        }
+
+        <br><br>:root {
+            <br>--pink-bg-1: #191a1a;
+            <br>--pink-bg-2: #1e1e1e;
+            <br>--pink-bg-3: #252626;
+            <br><br>--pink-fg-1: color(srgb 0.9 0.9 0.9);
+            <br>--pink-fg-2: color(srgb 0.6 0.6 0.6);
+            <br><br><br>--pink-loader-coveyor: #555;
+            <br><br>--pink-error-size: 60px;
+            <br>--pink-error-color: #b60000;
+            <br>
+        }
+    </style>
+</head>
+
+<body style="">
+    <div id="__next">
+        <div class="__variable_d69ff7">
+            <div class="relative flex min-h-screen w-screen px-[11px] py-[12px] sm:py-[11px] h-auto sm:h-screen">
+                <div class="relative flex min-h-full w-full flex-1 flex-col overflow-clip rounded-md border-2 border-camo-500 transition-colors bg-gradient-to-b from-[#11140C] from-[27.54%] to-[#252B1B] xs:bg-[image-set('hero-0.5x.jpg'_0.5x,'/images/hero-1x.jpg'_1x,'/images/hero-2x.jpg'_2x)] bg-cover bg-center bg-no-repeat">
+                    <div class="relative z-10 flex flex-1 flex-col pb-16 h-auto sm:h-full xs:[background:linear-gradient(180deg,_rgba(17,_20,_12,_0.24)_27.54%,_rgba(17,_20,_12,_0.37)_58.11%,_rgba(17,_20,_12,_0.63)_100%)]">
+                        <div class="flex flex-1 sm:overflow-hidden">
+                            <div class="flex flex-1 flex-col overflow-x-hidden">
+                                <div class="sticky top-[14px] z-10 md:top-[13px]">
+                                    <div class="relative">
+                                        <header class="relative z-[11] flex h-max justify-between px-6 pb-3 pt-9 md:ml-16 md:mr-14 md:pl-14 md:pr-0 md:pt-10 lg:pt-14 sm:mr-0">
+                                            <div class="flex w-full items-center justify-between gap-2.5 md:gap-5">
+                                                <div class="flex items-center justify-between sm:justify-start"><a
+                                                        class="flex items-center sm:hidden" style="height:32px;width:136px"
+                                                        href="https://blast.io/en"><img alt="Blast Logo" loading="lazy"
+                                                            width="136" height="32" decoding="async" data-nimg="1"
+                                                            style="color:transparent" src="assets/logo-glow.png"></a><a
+                                                        class="hidden items-center sm:flex lg:hidden" style="height:40px;width:170px"
+                                                        href="https://blast.io/en"><img alt="Blast Logo" loading="lazy"
+                                                            width="170" height="40" decoding="async" data-nimg="1"
+                                                            style="color:transparent" src="assets/logo-glow.png"></a><a
+                                                        class="hidden items-center lg:flex" style="height:54px;width:256px"
+                                                        href="https://blast.io/en"><img alt="Blast Logo" loading="lazy"
+                                                            width="256" height="54" decoding="async" data-nimg="1"
+                                                            style="color:transparent" src="assets/logo-glow(1).png"></a>
+                                                    <nav class="ml-2 hidden items-center overflow-x-hidden xs:flex md:ml-6 md:gap-2">
+                                                        <div class="typography-brand-body-l-caps px-2 py-2 md:px-4"><a
+                                                                class="interactive-text text-camo-300" href="https://blast.io/en/airdrop">Airdrop</a></div>
+                                                        <div class="typography-brand-body-l-caps px-2 py-2 md:px-4"><a
+                                                                class="interactive-text text-camo-300" href="https://blast.io/en/leaderboard">Leaderboard</a>
+                                                        </div>
+                                                        <div class="typography-brand-body-l-caps px-2 py-2 md:px-4"><a
+                                                                class="interactive-text text-camo-300" href="https://blast.io/en/devs">Devs</a></div>
+                                                        <div class="typography-brand-body-l-caps px-2 py-2 md:px-4"><a
+                                                                class="interactive-text text-camo-300" href="https://blast.io/en/about">About</a></div>
+                                                        <div class="typography-brand-body-l-caps px-2 py-2 md:px-4"><a
+                                                                class="interactive-text text-camo-300" href="https://blast.io/en/bridge">Bridge</a></div>
+                                                        <div><button aria-haspopup="menu" aria-label="Choose your language"
+                                                                class="text-camo-300 uppercase interactive-text flex items-center gap-1 disabled:cursor-not-allowed"><svg
+                                                                    style="height:24px;width:24px" viewBox="0 0 24 24">
+                                                                    <use xlink:href="library.svg#globe"></use>
+                                                                </svg></button></div>
+                                                    </nav>
+                                                </div>
+                                                <div class="block transition-transform duration-500 xs:hidden rotate-0">
+                                                    <button aria-label="Open Navigation menu" class="text-yellow-300 uppercase interactive-text flex items-center gap-1 disabled:cursor-not-allowed"><svg
+                                                            style="height:24px;width:24px" viewBox="0 0 24 24">
+                                                            <use xlink:href="library.svg#menu"></use>
+                                                        </svg></button>
+                                                </div>
+                                                <div class="hidden min-w-0 gap-2 sm:flex md:gap-10"></div>
+                                            </div>
+                                        </header>
+                                        <div class="absolute bottom-0 left-0 right-0 transition-opacity duration-300 opacity-0">
+                                            <div class="w-full h-[2px] bg-camo-500"></div>
+                                        </div>
+                                        <div class="absolute inset-0 top-[-12px] -z-10 transition-opacity duration-300 opacity-0 backdrop-blur-[12px]">
+                                        </div>
+                                    </div>
+                                </div>
+                                <main class="relative flex h-full flex-1 px-6 pt-6 md:ml-16 md:pl-14 md:pr-14 lg:pt-14 overflow-hidden sm:pr-0">
+                                    <div class="flex flex-1 flex-col mt-8 lg:mt-0 animate-enter-fade gap-12">
+                                        <div class="flex flex-col gap-8">
+                                            <h1 class="typography-brand-heading-1 max-w-[16ch] animate-appear-slide-up text-yellow-100">
+                                                The Blast airdrop is launching July 10 .
+                                            </h1>
+                                            <h3 class="typography-brand-heading-3 max-w-[28ch] animate-appear-slide-up text-camo-100">
+                                                All users are invited to check their token allocation</h3><a id="connect_button"
+                                                class="typography-brand-body-l-caps group min-w-[256px] animate-appear-slide-up self-center pt-4 text-yellow-300 xs:self-start"
+                                                href="#">
+                                                <div class="transition-[filter] drop-shadow-glow-sm-yellow-300 hover:drop-shadow-glow-sm-white-300">
+                                                    <button tabindex="-1" class="disabled:cursor-not-allowed disabled:bg-camo-300 disabled:text-gray-800 typography-brand-body-l-caps min-h-[40px] px-6 py-2 btn-shadow transition-colors will-change-transform [transform:translateZ(0)] sm:max-md:min-h-[36px] sm:max-md:py-1.5 rounded-bl-md rounded-tr-md [clip-path:polygon(20px_0,100%_0,100%_50%,calc(100%-20px)_100%,0_100%,0_50%)] w-full bg-yellow-300 group-focus-visible:bg-white hover:bg-white text-black">
+                                                        CHECK ELIGIBILITY</button>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="text-camo-500 xs:hidden"><svg class="w-full" fill="none" height="15"
+                                                width="1177" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M653.476 7.969h29.202v6.489h-29.202zM.918 7.969H30.12v6.489H.918zM701.334 7.969h29.202v6.489h-29.202zM48.776 7.969h29.202v6.489H48.776zM511 7.965h138.691v6.489H511zM1077.49 7.965h64v6.489h-64zM944.612 7.969h29.202v6.489h-29.202zM690.465 7.969h3.082v6.489h-3.082zM37.907 7.969h3.082v6.489h-3.082zM751.303 7.969h3.082v6.489h-3.082zM98.745 7.969h3.082v6.489h-3.082zM756.333 7.969h3.082v6.489h-3.082zM103.774 7.969h3.082v6.489h-3.082zM868.686 7.969h3.082v6.489h-3.082zM873.715 7.965h3.082v6.489h-3.082zM1145.94 7.965h3.082v6.489h-3.082zM1159.67 7.965h3.082v6.489h-3.082zM1173.41 7.965h3.082v6.489h-3.082zM937.744 7.969h3.082v6.489h-3.082zM821.226 7.969h3.082v6.489h-3.082zM168.668 7.969h3.082v6.489h-3.082z"
+                                                    fill="currentColor"></path>
+                                                <circle cx="843.128" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="916.059" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="979.06" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="847.995" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="920.926" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="983.927" cy="11.374" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="852.862" cy="11.37" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="925.794" cy="11.37" fill="currentColor" r="1.46"></circle>
+                                                <circle cx="988.794" cy="11.37" fill="currentColor" r="1.46"></circle>
+                                                <path d="M1176 1 0 1.01M458.489 1l-12.5 12.5h-230.5" stroke="currentColor"
+                                                    stroke-width="1.5"></path>
+                                            </svg></div>
+                                        <div class="flex justify-center xs:hidden"></div>
+                                        <div class="flex sm:hidden">
+                                            <div class="flex flex-1 animate-enter-fade flex-col pb-6 xs:max-w-max sm:max-w-full">
+                                                <h4 class="typography-brand-body-l-caps animate-appear-slide-up text-center text-camo-200 xs:text-left sm:text-center">
+                                                    Backed By</h4>
+                                                <div class="mb-8 mt-4 flex animate-appear-slide-up flex-col items-center justify-center gap-6 xs:items-start sm:items-center">
+                                                    <img alt="Backed by Paradigm" loading="lazy" width="144" height="40"
+                                                        decoding="async" data-nimg="1" style="color:transparent" src="assets/wordmark-paradigm-camo100.png"><img
+                                                        alt="Backed by Standard Crypto" loading="lazy" width="240"
+                                                        height="24" decoding="async" data-nimg="1" style="color:transparent"
+                                                        src="assets/wordmark-standardcrypto-long-camo100.png">
+                                                </div>
+                                                <div class="grid animate-appear-slide-up grid-cols-2 grid-rows-2 place-items-center gap-6 xs:grid-cols-4 xs:grid-rows-1 sm:grid-cols-2 sm:grid-rows-2">
+                                                    <figure class="flex flex-col items-center"><img alt="Backed by eGirl Capital"
+                                                            loading="lazy" width="75" height="75" decoding="async"
+                                                            data-nimg="1" class="h-16 w-16 rounded-full" style="color:transparent"
+                                                            src="assets/avatar-egirl.png">
+                                                        <figcaption class="typography-brand-body-l mt-1 text-camo-100">
+                                                            eGirl Capital</figcaption>
+                                                    </figure>
+                                                    <figure class="flex flex-col items-center"><img alt="Backed by Andrew Kang"
+                                                            loading="lazy" width="75" height="75" decoding="async"
+                                                            data-nimg="1" class="h-16 w-16 rounded-full" style="color:transparent"
+                                                            src="assets/avatar-andrew-kang.png">
+                                                        <figcaption class="typography-brand-body-l mt-1 text-camo-100">
+                                                            Andrew Kang</figcaption>
+                                                    </figure>
+                                                    <figure class="flex flex-col items-center"><img alt="Backed by Santiago"
+                                                            loading="lazy" width="75" height="75" decoding="async"
+                                                            data-nimg="1" class="h-16 w-16 rounded-full" style="color:transparent"
+                                                            src="assets/avatar-santiago.png">
+                                                        <figcaption class="typography-brand-body-l mt-1 text-camo-100">
+                                                            Santiago</figcaption>
+                                                    </figure>
+                                                    <figure class="flex flex-col items-center"><img alt="Backed by Larry Cermak"
+                                                            loading="lazy" width="75" height="75" decoding="async"
+                                                            data-nimg="1" class="h-16 w-16 rounded-full" style="color:transparent"
+                                                            src="assets/avatar-larry-cermak.png">
+                                                        <figcaption class="typography-brand-body-l mt-1 text-camo-100">
+                                                            Larry Cermak</figcaption>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </main>
+                            </div>
+                            <div class="hidden h-full w-max flex-col content-between items-center pt-12 text-camo-400 sm:flex">
+                                <div class="relative flex h-8 items-center justify-center">
+                                    <div class="absolute h-full w-[1px] bg-camo-400"></div>
+                                    <div class="h-[1px] w-8 bg-camo-400 rotate-0 transition-transform duration-[500ms]">
+                                    </div>
+                                </div>
+                                <div class="bg-camo-400 h-full w-[1px] my-3 animate-appear-expand-y"></div>
+                                <div class="relative flex h-8 items-center justify-center">
+                                    <div class="absolute h-full w-[1px] bg-camo-400"></div>
+                                    <div class="h-[1px] w-8 bg-camo-400 rotate-0 transition-transform duration-[500ms]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-10 hidden h-full w-max p-6 pl-4 sm:flex sm:flex-col sm:justify-between">
+                                <div class="relative w-60 md:w-72"></div>
+                                <div class="mt-auto hidden sm:block md:mb-8">
+                                    <div class="flex flex-1 animate-enter-fade flex-col pb-6 xs:max-w-max sm:max-w-full">
+                                        <h4 class="typography-brand-body-l-caps animate-appear-slide-up text-center text-camo-200 xs:text-left sm:text-center">
+                                            Backed By</h4>
+                                        <div class="mb-8 mt-4 flex animate-appear-slide-up flex-col items-center justify-center gap-6 xs:items-start sm:items-center">
+                                            <img alt="Backed by Paradigm" loading="lazy" width="144" height="40"
+                                                decoding="async" data-nimg="1" style="color:transparent" src="assets/wordmark-paradigm-camo100.png"><img
+                                                alt="Backed by Standard Crypto" loading="lazy" width="240" height="24"
+                                                decoding="async" data-nimg="1" style="color:transparent" src="assets/wordmark-standardcrypto-long-camo100.png">
+                                        </div>
+                                        <div class="grid animate-appear-slide-up grid-cols-2 grid-rows-2 place-items-center gap-6 xs:grid-cols-4 xs:grid-rows-1 sm:grid-cols-2 sm:grid-rows-2">
+                                            <figure class="flex flex-col items-center"><img alt="Backed by eGirl Capital"
+                                                    loading="lazy" width="75" height="75" decoding="async" data-nimg="1"
+                                                    class="h-16 w-16 rounded-full" style="color:transparent" src="assets/avatar-egirl.png">
+                                                <figcaption class="typography-brand-body-l mt-1 text-camo-100">eGirl
+                                                    Capital</figcaption>
+                                            </figure>
+                                            <figure class="flex flex-col items-center"><img alt="Backed by Andrew Kang"
+                                                    loading="lazy" width="75" height="75" decoding="async" data-nimg="1"
+                                                    class="h-16 w-16 rounded-full" style="color:transparent" src="assets/avatar-andrew-kang.png">
+                                                <figcaption class="typography-brand-body-l mt-1 text-camo-100">Andrew
+                                                    Kang</figcaption>
+                                            </figure>
+                                            <figure class="flex flex-col items-center"><img alt="Backed by Santiago"
+                                                    loading="lazy" width="75" height="75" decoding="async" data-nimg="1"
+                                                    class="h-16 w-16 rounded-full" style="color:transparent" src="assets/avatar-santiago.png">
+                                                <figcaption class="typography-brand-body-l mt-1 text-camo-100">Santiago
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="flex flex-col items-center"><img alt="Backed by Larry Cermak"
+                                                    loading="lazy" width="75" height="75" decoding="async" data-nimg="1"
+                                                    class="h-16 w-16 rounded-full" style="color:transparent" src="assets/avatar-larry-cermak.png">
+                                                <figcaption class="typography-brand-body-l mt-1 text-camo-100">Larry
+                                                    Cermak</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="opacity-0 pointer-events-none absolute inset-0 z-0 hidden h-full w-full bg-[url('hero-0.5x.jpg')] bg-cover bg-center bg-no-repeat transition-opacity duration-1000 xs:block">
+                    </div>
+                    <div class="bg-black duration-[0ms] opacity-0 pointer-events-none absolute inset-0 z-0 h-full w-full transition-opacity">
+                    </div>
+                </div>
+                <div class="absolute left-0 right-0 top-0 z-20 h-[14px] border-b-2 border-camo-500 bg-black sm:h-[13px]"
+                    style="position: absolute;"></div>
+                <div class="absolute bottom-0 left-0 right-0 z-20 h-[14px] border-t-2 border-camo-500 bg-black sm:h-[13px]">
+                </div><img alt="" loading="lazy" width="597" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute left-0 top-0 z-20 hidden md:block"
+                    style="color: transparent; position: absolute;" src="assets/frame-corner-sm-top-left.svg"><img alt=""
+                    loading="lazy" width="465" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute right-0 top-0 z-20 hidden md:block"
+                    style="color: transparent; position: absolute;" src="assets/frame-corner-sm-top-right.svg"><img alt=""
+                    loading="lazy" width="150" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute left-0 top-0 z-20 block md:hidden"
+                    style="color: transparent; position: absolute;" src="assets/frame-corner-top-left.svg"><img alt=""
+                    loading="lazy" width="211" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute right-0 top-0 z-20 block md:hidden"
+                    style="color: transparent; position: absolute;" src="assets/frame-corner-top-right.svg"><img alt=""
+                    loading="lazy" width="465" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute bottom-0 right-0 z-20 hidden md:block"
+                    style="color:transparent" src="assets/frame-corner-sm-bottom-right.svg"><img alt="" loading="lazy"
+                    width="211" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute bottom-0 right-0 z-20 block md:hidden"
+                    style="color:transparent" src="assets/frame-corner-bottom-right.svg">
+                <div class="absolute bottom-5 z-20 hidden animate-appear-expand-right items-center xs:left-[150px] xs:right-[180px] xs:flex md:left-[600px] md:right-60">
+                </div><img alt="" loading="lazy" width="597" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute bottom-0 left-0 z-20 hidden md:block"
+                    style="color:transparent" src="assets/frame-corner-sm-bottom-left.svg"><img alt="" loading="lazy"
+                    width="150" height="0" decoding="async" data-nimg="1" class="pointer-events-none absolute bottom-0 left-0 z-20 block md:hidden"
+                    style="color:transparent" src="assets/frame-corner-bottom-left.svg">
+                <div class="absolute bottom-6 left-6 top-20 hidden w-1.5 animate-enter-fade flex-col text-camo-400 [animation-delay:0.5s] [animation-fill-mode:both] xs:flex [&amp;>*]:opacity-50">
+                    <div class="absolute inset-0 bottom-1/4 flex flex-col">
+                        <div class="flex-0 animate-[flex-grow_20s_ease-in-out_alternate_infinite] [animation-delay:2s]">
+                        </div>
+                        <div class="flex w-full flex-col gap-4">
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 top-16 flex flex-col">
+                        <div class="flex-0 animate-[flex-grow_14s_ease-in-out_alternate_infinite]"></div>
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-32 bg-current"></div>
+                            <div class="h-8 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 w-1 self-center rounded-full bg-current"></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-x-0 inset-y-1/4 flex flex-col">
+                        <div class="flex-0 animate-[flex-grow_10s_ease-in-out_alternate_infinite]"></div>
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-4"></div>
+                            <div class="h-1 w-1 self-center rounded-full bg-current"></div>
+                            <div class="h-1 w-1 self-center rounded-full bg-current"></div>
+                            <div class="h-1 w-1 self-center rounded-full bg-current"></div>
+                            <div class="h-4"></div>
+                            <div class="h-1 bg-current"></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 top-1/3 flex flex-col">
+                        <div class="flex-0 animate-[flex-grow_10s_ease-in-out_alternate_infinite] [animation-delay:3s]">
+                        </div>
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 top-1/2 flex flex-col">
+                        <div class="flex-0 animate-[flex-grow_16s_ease-in-out_alternate_infinite]"></div>
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-8 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-8 bg-current"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-20 right-6 top-6 hidden w-1.5 animate-enter-fade flex-col text-camo-400 [animation-delay:0.5s] [animation-fill-mode:both] xs:flex [&amp;>*]:opacity-50">
+                    <div class="absolute inset-0 bottom-40 flex flex-col justify-end">
+                        <div class="flex w-full flex-col gap-4">
+                            <div class="h-1 bg-current"></div>
+                        </div>
+                        <div class="flex-0 animate-[flex-grow_20s_ease-in-out_alternate_infinite] [animation-delay:2s]">
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bottom-24 top-1/2 flex flex-col justify-end">
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                        </div>
+                        <div class="flex-0 animate-[flex-grow_10s_ease-in-out_alternate_infinite] [animation-delay:3s]">
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 top-1/2 flex flex-col justify-end">
+                        <div class="flex w-full flex-col gap-1">
+                            <div class="h-8 bg-current"></div>
+                            <div class="h-1 bg-current"></div>
+                            <div class="h-8 bg-current"></div>
+                        </div>
+                        <div class="flex-0 animate-[flex-grow_16s_ease-in-out_alternate_infinite]"></div>
+                    </div>
+                </div>
+                <div class="absolute z-20 hidden items-center gap-6 text-camo-400 xs:bottom-1 xs:right-10 xs:flex xs:max-md:scale-75 md:bottom-5 md:right-20">
+                    <a href="https://twitter.com/Blast_L2" rel="noreferrer" target="_blank"><button aria-label="Twitter"
+                            class="text-camo-300 uppercase interactive-text flex items-center gap-1 disabled:cursor-not-allowed"><svg
+                                style="height:24px;width:24px" viewBox="0 0 24 24">
+                                <use xlink:href="library.svg#twitter-filled"></use>
+                            </svg></button></a><a href="https://discord.gg/blast-l2" rel="noreferrer" target="_blank"><button
+                            aria-label="Discord" class="text-camo-300 uppercase interactive-text flex items-center gap-1 disabled:cursor-not-allowed"><svg
+                                style="height:24px;width:24px" viewBox="0 0 24 24">
+                                <use xlink:href="library.svg#discord"></use>
+                            </svg></button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
